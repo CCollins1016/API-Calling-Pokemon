@@ -7,6 +7,18 @@
 
 import Foundation
 
+// MARK: - Pokémon List Models
+struct PokemonListResponse: Codable {
+    let results: [Pokemon]
+}
+
+struct Pokemon: Codable, Identifiable {
+    var id: String { name }
+    let name: String
+    let url: String
+}
+
+// MARK: - Pokémon Detail Models
 struct PokemonDetail: Codable {
     let sprites: Sprites
     let types: [PokemonTypeEntry]
